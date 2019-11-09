@@ -1,5 +1,5 @@
 #!/bin/bash
-# 
+#
 # Copy data from a Time Machine volume mounted on a Linux box.
 #
 # Usage: copy-from-time-machine.sh <source> <target>
@@ -21,7 +21,7 @@
 # 10.6 mounted on a Linux 3.2.0-38 Ubuntu box. YMMV.
 #
 # MIT License.
-# 
+#
 #  - vjt@openssl.it
 #
 
@@ -31,8 +31,6 @@ target="$2"
 hfsd="$3"
 
 Lang=C
-
-set -e
 
 if [ -z "$source" -o -z "$target" ]; then
   echo "Usage: $self <source> <target>"

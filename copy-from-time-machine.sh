@@ -30,7 +30,7 @@ source="$1"
 target="$2"
 hfsd="$3"
 
-Lang=C
+LC_ALL=C
 
 if [ -z "$source" -o -z "$target" ]; then
   echo "Usage: $self <source> <target>"

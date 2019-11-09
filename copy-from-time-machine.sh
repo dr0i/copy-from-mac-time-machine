@@ -30,6 +30,8 @@ source="$1"
 target="$2"
 hfsd="$3"
 
+Lang=C
+
 set -e
 
 if [ -z "$source" -o -z "$target" ]; then

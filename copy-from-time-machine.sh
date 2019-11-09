@@ -58,6 +58,12 @@ if [ -z "$hfsd" ]; then
   fi
 fi
 
+read hlnum type <<<$(stat -c '%h %F' "$source")
+if [ "$type" = 'regular empty file' -a -d "$hfsd/dir_$hlnum" ]; then
+    source="$hfsd/dir_$hlnum"
+    echo "using source from HFS Private Directory Data"
+fi
+
 find "$source" -mindepth 1 -maxdepth 1 -and -not -name . -and -not -name .. | while read entry; do
   dest="$target/`basename "$entry"`"
   read hlnum type <<<$(stat -c '%h %F' "$entry")

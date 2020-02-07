@@ -31,6 +31,7 @@ target="$2"
 hfsd="$3"
 
 LC_ALL=C
+LANG=en_US.UTF-8
 
 if [ -z "$source" -o -z "$target" ]; then
   echo "Usage: $self <source> <target>"

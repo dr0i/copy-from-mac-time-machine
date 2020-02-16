@@ -38,10 +38,14 @@ read type <<<$(stat -c '%F' "README.md")
 if [ "$type" != "regular file" ]; then
   echo "There are problems with your language settings. The 'stat' command must answer in English,
 i.e. 'regular file' but it's answer was '$type'.
-You may want to open an issue and ask for further assistance."
+You may want to open an issue and ask for further assistance. Then, please paste this into the
+ issue:
+$(locale)"
   exit
 fi
 
+
+exit
 if [ -z "$source" -o -z "$target" ]; then
   echo "Usage: $self <source> <target>"
   exit -1

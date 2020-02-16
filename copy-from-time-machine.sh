@@ -30,7 +30,17 @@ source="$1"
 target="$2"
 hfsd="$3"
 
-LC_ALL=C
+# set the locale. See https://unix.stackexchange.com/questions/87745/what-does-lc-all-c-do
+export LC_ALL=C
+
+# test if "stat" is responding as expected on this machine
+read type <<<$(stat -c '%F' "README.md")
+if [ "$type" != "regular file" ]; then
+  echo "There are problems with your language settings. The 'stat' command must answer in English,
+i.e. 'regular file' but it's answer was '$type'.
+You may want to open an issue and ask for further assistance."
+  exit
+fi
 
 if [ -z "$source" -o -z "$target" ]; then
   echo "Usage: $self <source> <target>"

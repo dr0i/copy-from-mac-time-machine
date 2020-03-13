@@ -44,8 +44,6 @@ $(locale)"
   exit
 fi
 
-
-exit
 if [ -z "$source" -o -z "$target" ]; then
   echo "Usage: $self <source> <target>"
   exit -1

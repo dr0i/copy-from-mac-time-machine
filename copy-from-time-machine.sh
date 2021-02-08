@@ -34,7 +34,7 @@ hfsd="$3"
 export LC_ALL=C
 
 # test if "stat" is responding as expected on this machine
-read type <<<$(stat -c '%F' "README.md")
+read type <<<$(stat -c '%F' "$self")
 if [ "$type" != "regular file" ]; then
   echo "There are problems with your language settings. The 'stat' command must answer in English,
 i.e. 'regular file' but it's answer was '$type'.

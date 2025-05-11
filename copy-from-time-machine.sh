@@ -82,7 +82,7 @@ find "$source" -mindepth 1 -maxdepth 1 -and -not -name . -and -not -name .. | wh
 
   case $type in
     'regular file'|'symbolic link')
-      cp -van "$entry" "$dest"
+      cp -va --update=none "$entry" "$dest"
       ;;
 
     'directory')

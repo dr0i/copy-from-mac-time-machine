@@ -28,7 +28,11 @@ Run the script - doing this as `sudo` avoids possible file permission problems:
 sudo ./copy-from-time-machine.sh $source $target
 ```
 
-where `$source` is the mount point (i.e. not e.g. `/dev/sdb2`) of the Time Machine Volume and the proper directory (e.g. could be "Latest") and `$target` is the directory where you want to have the files copied to.
+where `$source` is the mount point (i.e. *not* e.g. `/dev/sdb2`) of the Time Machine Volume and the proper directory (e.g. could be "Latest") and `$target` is the directory where you want to have the files copied to.
+
+If the script results in "HFS Private Directory Data found in $source" and then
+abruptly ends, the $source may be a symbolic link. If so, just append a slash '/' to
+$source.
 
 As a third argument the path of `.HFS+ Private Directory Data\r` could be given, if it wasn't detected by the script.
 

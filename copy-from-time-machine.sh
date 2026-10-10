@@ -66,6 +66,7 @@ if [ -z "$hfsd" ]; then
     exit -2
   else
     echo "HFS Private Directory Data found in '$hfsd'"
+    echo "If nothing happens, i.e. you don't see any output of copied files here, check if '$hfsd' is a symbolic link. If so, just append a slash '/' to that path."
     hfsd="$hfsd/$sysname"
   fi
 fi
